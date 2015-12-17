@@ -1,0 +1,12 @@
+<ion-view view-title="Members">
+   <ion-content>
+      <div class="list">
+        <a ng-repeat="member in members" 
+           href="#/tab/members/{{member.id}}"
+           class="item item-thumbnail-left">
+          <img ng-src="img/ionic.png">
+          <h2 style="padding-top:40px;">{{ member.name }}</h2>
+        </a>
+      </div>
+    </ion-content>
+</ion-view>

@@ -1,28 +1,21 @@
-angular.module('starter.controllers', [])
+angular.module('parliament.controllers', [])
 
-.controller('DashCtrl', function($scope) {})
-
-.controller('ChatsCtrl', function($scope, Chats) {
-  // With the new view caching in Ionic, Controllers are only called
-  // when they are recreated or on app start, instead of every page change.
-  // To listen for when this page is active (for example, to refresh data),
-  // listen for the $ionicView.enter event:
-  //
-  //$scope.$on('$ionicView.enter', function(e) {
-  //});
-
-  $scope.chats = Chats.all();
-  $scope.remove = function(chat) {
-    Chats.remove(chat);
-  };
+.controller('MembersCtrl', function($scope, $http) {
+  $http.get('http://localhost:8000/members/').then(function(response){
+    $scope.members = response.data;   
+  });
 })
 
-.controller('ChatDetailCtrl', function($scope, $stateParams, Chats) {
-  $scope.chat = Chats.get($stateParams.chatId);
+.controller('MemberDetailCtrl', function($scope, $stateParams, $http) {
+  $http.get('http://localhost:8000/members/'+$stateParams.memberId).then(function(response){
+    $scope.member = response.data;   
+  });
 })
 
-.controller('AccountCtrl', function($scope) {
-  $scope.settings = {
-    enableFriends: true
-  };
-});
+.controller('AboutCtrl', function($scope) {
+  $scope.about = "This app provides list of members of Lok Shaba and Raja Shaba...";
+  $scope.developer = "Sudeep Kodavati <sudeepkodavati@gmail.com>";
+
+})
+
+
