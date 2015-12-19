@@ -21,13 +21,14 @@ angular.module('parliament.services', [])
 
   return {
     all: function() {
-        $http.get(baseurl).then(function(response){
+        /*$http.get(baseurl).then(function(response){
           return response.data;
-        });
+        });*/
+        return members;
     },
     get: function(memberId) {
       for (var i = 0; i < members.length; i++) {
-        if (members[i].id === parseInt(memberId)) {
+        if (members[i].id === memberId) {
           return members[i];
         }
       }

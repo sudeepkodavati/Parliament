@@ -1,36 +1,76 @@
-
 <ion-view view-title="{{member.name}}">
   <ion-content class="padding">
-    <img ng-src="img/ionic.png" style="width: 64px; height: 64px">
-    <p>
-      Member Id : {{member.memberid}}
-    </p>
-    <p>
-      Name : {{member.name}}
-    </p>
-     <p>
-      Party : {{member.party}}
-    </p>
-    <p>
-      Constituency : {{member.constituencies}}
-    </p>
-     <p>
-      State : {{member.state}}
-    </p>
-    <p>
-      Permanent Address : {{member.paddress}}
-    </p>
-     <p>
-      Permanent Phone : {{member.pphone}}
-    </p>
-    <p>
-      Local Address : {{member.localaddress}}
-    </p>
-    <p>
-      Local Phone : {{member.localphone}}
-    </p>
-    <p>
-      Email : {{member.email}}
-    </p>
+    <div class="row">
+      <div class="col"></div>
+      <div class="col col-50"><img ng-src="img/ionic.png" style="width: 150px; height: 150px"></div>
+      <div class="col"></div>
+    </div>
+    <div class="row">
+      <div class="col"><h3 style="text-align:center;">{{member.name}}</h3></div>
+    </div>
+    <div class="card">
+      <div class="item item-divider">
+        Information
+      </div>
+      <div class="item item-text-wrap">
+        <div class="row">
+          <div class="col"><b>Party</b></div>
+          <div class="col col">{{member.party}}</div>
+        </div>
+        <div class="row">
+          <div class="col"><b>Constituency</b></div>
+          <div class="col col">{{member.constituencies}}</div>
+        </div>
+        <div class="row">
+          <div class="col"><b>State</b></div>
+          <div class="col col">{{member.state}}</div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="item item-divider">
+        Permanent Contact
+      </div>
+      <div class="item item-text-wrap">
+        <div class="row">
+          <div class="col"><b>Address</b></div>
+          <div class="col col-75">{{member.paddress}}</div>
+        </div>
+        <div class="row">
+          <div class="col"><b>Phone</b></div>
+          <div class="col col-75">{{member.pphone}}</div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="item item-divider">
+        Local Contact
+      </div>
+      <div class="item item-text-wrap">
+        <div class="row">
+          <div class="col"><b>Address</b></div>
+          <div class="col col-75">{{member.localaddress}}</div>
+        </div>
+        <div class="row">
+          <div class="col"><b>Phone</b></div>
+          <div class="col col-75">{{member.localphone}}</div>
+        </div>
+      </div>
+    </div>
+    <div class="item item-divider">
+        Other
+      </div>
+      <div class="item item-text-wrap">
+        <div class="row">
+          <div class="col"><b>Email</b></div>
+          <div class="col col-75">{{member.email}}</div>
+        </div>
+        <div class="row">
+          <div class="col"><b>Member ID</b></div>
+          <div class="col col-75">{{member.memberid}}</div>
+        </div>
+      </div>
+    </div>
+
   </ion-content>
-</ion-view>
+</ion-view> 
